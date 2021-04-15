@@ -1,0 +1,93 @@
+cd Desktop
+mkdir unix_practice
+cd unix_practice
+pwd
+mkdir web 
+mkdir code 
+mkdir docker 
+mkdir projects 
+cd projects 
+mkdir group_randomizer 
+cd ../../ 
+cd unix_practice/ 
+cd web  
+mkdir HTML 
+mkdir images 
+cd images  
+mkdir HD 
+mkdir SD 
+cd ../.. 
+touch README.md 
+cd web  
+cd HTML  
+touch index.html 
+touch directry.html 
+touch contact_us.html 
+touch products.html 
+touch our_staff.html 
+touch checkout.html 
+ls 
+cd ../.. 
+cd code 
+touch backend_seever.py 
+touch transaction_log.py 
+cd ../projects  
+touch PROJECT_README.md 
+cd group_randomizer 
+touch __init__.py 
+touch randomizer.py 
+cd ..  
+mv group_randomizer ../code  
+ls 
+rm PROJECT_README.md 
+cd ~/Desktop 
+cp -r unix_practice unix_practice_backup_1 
+cd unix_practice/web/HTML  
+ls 
+mv index.html ../../code  
+cd .. 
+rm -r HTML  
+ls
+cd ../code  
+mkdir python 
+ls     
+mv transaction_log.py python/transaction_log.py 
+mv backend_server.py python/backend_server.py  
+ls 
+cd ../web  
+ls 
+mv images .. 
+cd .. 
+ls 
+rm web  
+rm -r web 
+ls 
+cd .. 
+cp -r unix_practice unix_practice_backup_2  
+cd unix_practice  
+rm README.md 
+cd code 
+rm index.html 
+cd group_randomizer 
+rm __init__.py 
+rm randomizer.py 
+cd .. 
+rm -r group_randomizer 
+cd python 
+rm backend_server.py 
+rm transaction_log.py 
+cd .. 
+rm -r python 
+cd .. 
+rm -r code 
+rm -r docker 
+rm -r projects 
+cd images  
+rm -r HD 
+rm -r SD 
+cd .. 
+rm -r images 
+cd .. 
+rm -r unix_practice 
+rm -r unix_practice_backup_1 
+rm -r unix_practice_backup_2

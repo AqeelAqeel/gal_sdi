@@ -2,6 +2,19 @@
 
 Last Update: 15 Apr 2021
 
+## CLI
+
+### Basic Commands
+
+* make directory: `mkdir [folder name]`
+* create file: `touch [file name]`
+* move or rename: `mv [old] [new]`
+* copy: `cp [old] [new]`
+* recursive copy: `cp -r [old] [new]`
+* remove: `rm [file name]`
+* recursive remove: `rm -r [file name]`
+* clear terminal: `cmd + k`
+
 ## Git & Github
 
 * [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
@@ -10,7 +23,7 @@ Last Update: 15 Apr 2021
 
 * initize repo: `git init`
 * clone repo: `git clone [url]`
-* add to stage: `git add [file_name]`
+* add to stage: `git add [filename]`
 * commit: `git commit -m "[message]"`
 * push: `git push`
 * pull: `git pull`
