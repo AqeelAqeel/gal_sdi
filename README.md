@@ -27,6 +27,10 @@ Last Update: 15 Apr 2021
 * commit: `git commit -m "[message]"`
 * push: `git push`
 * pull: `git pull`
+* see all branches: `git branch -a`
+* create branch: `git branch [new branch name]`
+* switch branches: `git checkout [branch name]`
+* create and switch brnaches: `git checkout -b [new branch name]`
 
 ### Advanced Commands
 
