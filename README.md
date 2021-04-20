@@ -36,7 +36,7 @@ Last Update: 15 Apr 2021
 
 * create a new repository on the command line
 
-```
+```unix
 echo "# gal_sdi" >> README.md
 git init
 git add .
@@ -48,7 +48,7 @@ git push -u origin main
 
 * push an existing repository from the command line
 
-```
+```unix
 git remote add origin https://github.com/josiah-d/gal_sdi.git
 git branch -M main
 git push -u origin main
@@ -58,7 +58,7 @@ git push -u origin main
 
 ### Permutations
 
-* $$ nPk = n! / (n - k)! $$
+* nPk = n! / (n - k)!
 
 ### Combinations
 
