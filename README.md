@@ -58,7 +58,7 @@ git push -u origin main
 
 ### Permutations
 
-* nPk = n! / (n - k)!
+* $$ nPk = n! / (n - k)! $$
 
 ### Combinations
 
