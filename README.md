@@ -53,3 +53,29 @@ git remote add origin https://github.com/josiah-d/gal_sdi.git
 git branch -M main
 git push -u origin main
 ```
+
+## Maths
+
+### Permutations
+
+* nPk = n! / (n - k)!
+
+### Combinations
+
+* nCk = n! / ((n - k)!  * k!)
+
+### Conditional probability
+
+* P(A | B) = P(AB) / P(B)
+
+## Plotting
+
+* Key parts
+    * Title
+    * Axes
+    * Data
+    * Legend
+    * Annotations
+    * Facets
+
+[PyPlot Parts](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/cdbb5b1b140a97b8ea83e687457cab1a.png)
