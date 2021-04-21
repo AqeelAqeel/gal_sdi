@@ -1,0 +1,3 @@
+[submodule "dsi_prep/dsi-learn-week0-commandline"]
+	path = dsi_prep/dsi-learn-week0-commandline
+	url = https://github.com/josiah-d/gal_sdi
