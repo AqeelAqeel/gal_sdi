@@ -4,7 +4,7 @@ Last Update: 15 Apr 2021
 
 ## CLI
 
-### Basic Commands
+#### Basic Commands
 
 * make directory: `mkdir [folder name]`
 * create file: `touch [file name]`
@@ -19,7 +19,7 @@ Last Update: 15 Apr 2021
 
 * [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
-### Basic Commands
+#### Basic Commands
 
 * initize repo: `git init`
 * clone repo: `git clone [url]`
@@ -32,7 +32,7 @@ Last Update: 15 Apr 2021
 * switch branches: `git checkout [branch name]`
 * create and switch brnaches: `git checkout -b [new branch name]`
 
-### Advanced Commands
+#### Advanced Commands
 
 * create a new repository on the command line
 
@@ -56,20 +56,21 @@ git push -u origin main
 
 ## Maths
 
-### Permutations
+#### Permutations
 
 * nPk = n! / (n - k)!
 
-### Combinations
+#### Combinations
 
 * nCk = n! / ((n - k)!  * k!)
 
-### Conditional probability
+#### Conditional probability
 
 * P(A | B) = P(AB) / P(B)
 
 ## Plotting
 
+* [Pyplot Docs](https://matplotlib.org/stable/tutorials/introductory/pyplot.html)
 * Key parts
     * Title
     * Axes
@@ -79,3 +80,123 @@ git push -u origin main
     * Facets
 
 ![PyPlot Parts](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/cdbb5b1b140a97b8ea83e687457cab1a.png)
+
+## SQL Databases
+
+#### Table Summary
+
+`PRAGMA table_info(tablename);`
+
+* Between
+
+```sql
+SELECT * FROM table_name
+WHERE column_name BETWEEN low AND high;
+```
+
+* Group By
+
+```sql
+SELECT column_name FROM table_name
+GROUP BY column_name;
+```
+
+* Order By
+
+```sql
+SELECT column_name, other_column_name FROM table_name
+ORDER BY other_column_name;
+```
+
+* Select Distinct
+    * Removes **dulicated** query results
+
+```sql
+SELECT DISTINCT column_name, other_column_name FROM table_name
+ORDER BY other_column_name;
+```
+
+* Aggregate functions
+    * `COUNT`
+
+    ```sql
+    SELECT other_column_name, COUNT(column_name) FROM table_name
+    GROUP BY other_column_name;
+    ```
+
+    * `SUM`
+
+    ```sql
+    SELECT SUM(column_name) FROM table_name
+    GROUP BY other_column_name;
+    ```
+
+    * `AVERAGE`
+
+    ```sql
+    SELECT AVG(column_name), other_column_name FROM table_name
+    GROUP BY other_column_name;
+    ```
+
+    * `MIN`
+
+    ```sql
+    SELECT MIN(column_name), other_column_name FROM table_name
+    GROUP BY other_column_name;
+    ```
+
+    * `MAX`
+
+    ```sql
+    SELECT MAX(column_name), other_column_name FROM table_name
+    GROUP BY other_column_name;
+    ```
+
+* Join functions
+    * `JOIN`
+        * Inner Join
+
+    ```sql
+    SELECT t1.col1, t1.col2, t2.col1, t2.col2
+    FROM table1 as t1
+    JOIN table2 as t2
+    ON t1.id = t2.col_id;
+    ```
+
+    * `LEFT JOIN`
+
+    ```sql
+    SELECT t1.col1, t1.col2, t2.col1, t2.col2
+    FROM table1 as t1
+    LEFT JOIN table2 as t2
+    ON t1.id = t2.col_id;
+    ```
+
+    * `RIGHT JOIN`
+
+    ```sql
+    SELECT t1.col1, t1.col2, t2.col1, t2.col2
+    FROM table1 as t1
+    RIGHT JOIN table2 as t2
+    ON t1.id = t2.col_id;
+    ```
+
+    * `FULL OUTER JOIN`
+
+    ```sql
+    SELECT t1.col1, t1.col2, t2.col1, t2.col2
+    FROM table1 as t1
+    FULL OUTER JOIN table2 as t2
+    ON t1.id = t2.col_id;
+    ```
+
+    * **Multiple Joins**
+
+    ```sql
+    SELECT t1.col1, t1.col2, t2.col1, t2.col2, t3.col1, t3.col2
+    FROM table1 as t1
+    JOIN table2 as t2
+    ON t1.id = t2.col_id
+    JOIN table3 as t3
+    ON t2.col2_id = t2.id
+    ```
