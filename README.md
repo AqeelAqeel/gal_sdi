@@ -200,3 +200,16 @@ ORDER BY other_column_name;
     JOIN table3 as t3
     ON t2.col2_id = t2.id
     ```
+
+* Pick MAX count of GROUP BY table
+
+    ```sql
+    /*
+    COUNT is given a variable name to allow it to be called later.
+    */
+    SELECT group_column, COUNT(*) as cnt
+    FROM table
+    GROUP BY group_column
+    ORDER BY cnt DESC
+    LIMIT 1;
+    ```
