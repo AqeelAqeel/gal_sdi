@@ -1,8 +1,10 @@
 # Master Notes
 
-Last Update: 15 Apr 2021
+Last Update: 15 Apr 202
 
-$$ \cfrac{2}{1+\cfrac{2}{1+\cfrac{2}{1}}} $$
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}](https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a})
 
 ---
 
