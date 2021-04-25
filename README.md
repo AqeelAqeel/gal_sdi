@@ -108,7 +108,7 @@ git push -u origin main
 
 #### Correlation coefficient
 
-* corr(X, Y) = [i=1_SUM_n (x_i - xBar)(y_i - yBar)] / [(i=1_SUM_n (x_i - xBar) ** 2) * (i=1_SUM_n (y_i - yBar) ** 2)
+* corr(X, Y) = [i=1_SUM_n (x_i - xBar)(y_i - yBar)] / SQRT[(i=1_SUM_n (x_i - xBar) ** 2) * (i=1_SUM_n (y_i - yBar) ** 2)
 
 ---
 
