@@ -2,6 +2,10 @@
 
 Last Update: 15 Apr 2021
 
+\( \cfrac{2}{1+\cfrac{2}{1+\cfrac{2}{1}}} \)
+
+---
+
 ## CLI
 
 #### Basic Commands
@@ -14,6 +18,8 @@ Last Update: 15 Apr 2021
 * remove: `rm [file name]`
 * recursive remove: `rm -r [file name]`
 * clear terminal: `cmd + k`
+
+---
 
 ## Git & Github
 
@@ -54,6 +60,8 @@ git branch -M main
 git push -u origin main
 ```
 
+---
+
 ## Maths
 
 #### Permutations
@@ -64,9 +72,47 @@ git push -u origin main
 
 * nCk = n! / ((n - k)!  * k!)
 
+* Complex version
+    * (KCk * (N - K)C(n - k)) / NCn
+    * Where:
+        * K is `number of successes available`
+        * k is `number of successes needed`
+        * N is `members available`
+        * n is `mebers chosen`
+
 #### Conditional probability
 
 * P(A | B) = P(AB) / P(B)
+
+#### Bayes' Theorum
+
+* P(A | B) = (P(B | A) * P(A)) / P(B)
+
+#### Cumulative distribution function
+
+* CDF = lower_SUM_upper p(X = n)
+
+#### Expected value
+
+* Discrete
+    * E(X) = SUM_i (x_i * p(x_i))
+* Continuous
+    * E(X) = -inf_INT_inf (x * f(x))dx
+
+#### Covariance
+
+* Estimates amount and direction Y moves as X changes
+* COV(X, Y) = 1/n * i=1_SUM_n (x_i - xBar)(y_i - yBar)
+
+#### Variance
+
+* VAR(X) = COV(X, X) = 1/n * i=1_SUM_n (x_i - xBar) ** 2
+
+#### Correlation coefficient
+
+* corr(X, Y) = [i=1_SUM_n (x_i - xBar)(y_i - yBar)] / [(i=1_SUM_n (x_i - xBar) ** 2) * (i=1_SUM_n (y_i - yBar) ** 2)
+
+---
 
 ## Plotting
 
@@ -80,6 +126,8 @@ git push -u origin main
     * Facets
 
 ![PyPlot Parts](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/cdbb5b1b140a97b8ea83e687457cab1a.png)
+
+---
 
 ## SQL Databases
 
