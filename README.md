@@ -2,7 +2,7 @@
 
 Last Update: 15 Apr 2021
 
-\( \cfrac{2}{1+\cfrac{2}{1+\cfrac{2}{1}}} \)
+$$ \cfrac{2}{1+\cfrac{2}{1+\cfrac{2}{1}}} $$
 
 ---
 
