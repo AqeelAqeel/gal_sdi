@@ -110,6 +110,18 @@ git push -u origin main
 
 * corr(X, Y) = [i=1_SUM_n (x_i - xBar)(y_i - yBar)] / SQRT[(i=1_SUM_n (x_i - xBar) ** 2) * (i=1_SUM_n (y_i - yBar) ** 2)
 
+#### Distributions
+
+![Normal](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/c548abe948b204550481654e32b9d4d4.png)
+
+![Empirical Rule](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/7e9688d48ba2b2e304969d13d8e4343d.png)
+
+![Geometric](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/365d2527ed510a5c5bf3d220887aef13.png)
+
+![Power Law](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/b2e012bf689efa1483f296698db3c0f0.png)
+
+![Population and Sampling Distribution](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/3cd2651378842a8f25f7f70b26ab65a0.png)
+
 ---
 
 ## Plotting
