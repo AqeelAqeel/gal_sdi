@@ -2,6 +2,8 @@
 
 Last Update: 24 Apr 2021
 
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
 ---
 
 ## CLI
@@ -88,27 +90,29 @@ git push -u origin main
 
 #### Cumulative distribution function
 
-* CDF = lower_SUM_upper p(X = n)
+* [CDF resources](https://learn-2.galvanize.com/cohorts/868/blocks/248/content_files/07_Continuous_Prob_Dists/00_unit_overview.md)
+* CDF = &Sigma;<sub>lower</sub><sup>upper</sup> p(X = n)
+* Normal distribution Z-test: `norm.cdf(1.5, loc=1.25, scale=.46)`
 
 #### Expected value
 
 * Discrete
-    * E(X) = SUM_i (x_i * p(x_i))
+    * E(X) = &Sigma;<sub>i</sub> (x<sub>i</sub> * p(x<sub>i</sub>))
 * Continuous
-    * E(X) = -inf_INT_inf (x * f(x))dx
+    * E(X) = &int;<sub>-inf</sub><sup>inf</sup> (x * f(x))dx
 
 #### Covariance
 
 * Estimates amount and direction Y moves as X changes
-* COV(X, Y) = 1/n * i=1_SUM_n (x_i - xBar)(y_i - yBar)
+* COV(X, Y) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar)(y<sub>i</sub> - yBar)
 
 #### Variance
 
-* VAR(X) = COV(X, X) = 1/n * i=1_SUM_n (x_i - xBar) ** 2
+* VAR(X) = COV(X, X) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2
 
 #### Correlation coefficient
 
-* corr(X, Y) = [i=1_SUM_n (x_i - xBar)(y_i - yBar)] / SQRT[(i=1_SUM_n (x_i - xBar) ** 2) * (i=1_SUM_n (y_i - yBar) ** 2)
+* corr(X, Y) = [&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar)(y<sub>i</sub> - yBar)] / SQRT[(&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2) * (&Sigma;<sub>i=1</sub><sup>n</sup> (y<sub>i</sub> - yBar) ** 2)
 
 #### Distributions
 
@@ -121,6 +125,40 @@ git push -u origin main
 ![Power Law](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/b2e012bf689efa1483f296698db3c0f0.png)
 
 ![Population and Sampling Distribution](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/3cd2651378842a8f25f7f70b26ab65a0.png)
+
+#### Central limit theorem (CLT)
+
+* &mu;_Xbar = &mu;
+* &sigma;_Xbar = &sigma; / sqrt(n)
+
+#### Hypothesis testing
+
+* &mu; == `True` population mean 
+* &mu;<sub>0</sub> == `hypothesized` population mean 
+
+* Null hypothesis (H<sub>0</sub>)
+    * the initial claim, assumption, presumption, or assertion being made
+    * H<sub>0</sub> : &mu; == &mu;<sub>0</sub>
+* Alternative hypothesis (H<sub>A</sub>)
+    * An alternative that can be accepted if there is statistically significant evidence found to refute the null hypothesis
+    * Upper tailed
+        * H<sub>A</sub> : &mu; > &mu;<sub>0</sub>
+    * Lower tailed
+        * H<sub>A</sub> : &mu; < &mu;<sub>0</sub>
+    * Two tailed
+        * H<sub>A</sub> : &mu; != &mu;<sub>0</sub>
+    * Errors
+        * Type I
+            * Reject H<sub>0</sub> when it is `True`
+        * Type II
+            * Accept H<sub>0</sub> when it is `False`
+* t-statistic
+    * t = (xBar - &mu;<sub>0</sub>) / (s / sqrt(n)) * t(n - 1)
+
+#### Confidence intervals
+
+* Used when there are no preconceived notions and desire to use sampling to learn about the population
+![95% CI](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/21125c3404bf0e14de6dcc164f71e5b1.png)
 
 ---
 
