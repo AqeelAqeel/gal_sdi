@@ -101,6 +101,10 @@ git push -u origin main
 * Continuous
     * E(X) = &int;<sub>-inf</sub><sup>inf</sup> (x * f(x))dx
 
+#### Mean
+
+* &mu; = n * p
+
 #### Covariance
 
 * Estimates amount and direction Y moves as X changes
@@ -109,6 +113,14 @@ git push -u origin main
 #### Variance
 
 * VAR(X) = COV(X, X) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2
+
+    ```python
+    n = total
+    p = mean / total
+    print((n*p) * (1-p))
+    ```
+
+* VAR = n * p * (1 - p)
 
 #### Correlation coefficient
 
