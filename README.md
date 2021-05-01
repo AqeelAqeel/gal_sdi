@@ -1,8 +1,9 @@
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<span style="font-family: Menlo;">
+
 # Master Notes
 
 Last Update: 24 Apr 2021
-
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 
 ---
 
@@ -176,7 +177,47 @@ git push -u origin main
 
 ### Linear algebra
 
-####
+#### Matrix multiplication
+
+* (AB)<sub>ij</sub> = &Sigma;<sub>k=1</sub><sup>m</sup> a<sub>ik</sub> * b<sub>kj</sub>
+* Dot product: A.dot(b) = A * B<sup>T</sup>
+
+#### Identity matrix (I<sub>m</sub>)
+
+* They are square, same number of rows and columns
+* They are diagonal, only non-zero entries have the same row and column index
+* All non-zero entries are 1
+
+![Identity Matrix](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.kVdcPRjTiGUVjok2dRNhKAHaBx%26pid%3DApi&f=1)
+
+#### Matrix rank & independence
+
+* Linear dependence
+    * Column can be constructed from other columns' data
+* Linear independence
+    * Unique data that cannot be constructed from other rows
+* Rank
+    * Number of linear independent columns (or rows) in a matrix
+
+#### Invertible matrix
+
+* `np.linalg.inv(MATRIX)`
+* AA<sup>-1</sup> = A<sup>-1</sup>A = I
+* It must be square, i.e. of size `n X n`
+* It must be full-rank, i.e. the number of linearly independent rows/columns is equal to `n`
+
+#### Systems of equations with linear algebra
+
+Ax<sup>&rarr;</sup> = b<sup>&rarr;</sup>
+A<sup>-1</sup>Ax<sup>&rarr;</sup> = A<sup>-1</sup>b<sup>&rarr;</sup>
+Ix<sup>&rarr;</sup> = x<sup>&rarr;</sup> = A<sup>-1</sup>b<sup>&rarr;</sup>
+
+* Where
+    * A is a matrix of coeff
+    * x<sup>&rarr;</sup> is an unknown vector
+    * b<sup>&rarr;</sup> is there product
+    * A<sup>-1</sup> is an inverse matrix
+    * I is an identity matrix
 
 ---
 
@@ -327,3 +368,4 @@ ORDER BY other_column_name;
     ORDER BY cnt DESC
     LIMIT 1;
     ```
+</span>
