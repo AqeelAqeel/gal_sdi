@@ -64,6 +64,8 @@ git push -u origin main
 
 ## Maths
 
+### Stats
+
 #### Permutations
 
 * nPk = n! / (n - k)!
@@ -171,6 +173,10 @@ git push -u origin main
 
 * Used when there are no preconceived notions and desire to use sampling to learn about the population
 ![95% CI](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/21125c3404bf0e14de6dcc164f71e5b1.png)
+
+### Linear algebra
+
+####
 
 ---
 
