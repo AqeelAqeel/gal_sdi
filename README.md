@@ -117,11 +117,11 @@ git push -u origin main
 
 * VAR(X) = COV(X, X) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2
 
-    ```python
-    n = total
-    p = mean / total
-    print((n*p) * (1-p))
-    ```
+```python
+n = total
+p = mean / total
+print((n*p) * (1-p))
+```
 
 * VAR = n * p * (1 - p)
 
@@ -130,6 +130,16 @@ git push -u origin main
 * corr(X, Y) = [&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar)(y<sub>i</sub> - yBar)] / SQRT[(&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2) * (&Sigma;<sub>i=1</sub><sup>n</sup> (y<sub>i</sub> - yBar) ** 2)
 
 #### Distributions
+
+* Quick sheet sheet on choosing distributions:
+    * Q: what's the probability of flipping 10 heads in 25 coin flips?
+        * A: binomial
+    * Q: what's the probability that the first heads will be on the third flip?
+        * A: geometric
+    * Q: what's the probability of flipping 20 heads over the course of 13 minutes if on average, you flip 10 heads per minute?
+        * A: poisson
+    * Q: what's the probability you wait more than a minute before flipping a heads, given that you flip an average of 10 heads per minute?
+        * A: exponential
 
 ![Normal](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/c548abe948b204550481654e32b9d4d4.png)
 
@@ -205,6 +215,20 @@ git push -u origin main
 * AA<sup>-1</sup> = A<sup>-1</sup>A = I
 * It must be square, i.e. of size `n X n`
 * It must be full-rank, i.e. the number of linearly independent rows/columns is equal to `n`
+* Square matrices that stretch and/or rotate vectors without any collapsing of dimensions are invertible
+
+#### Matrix rotation
+
+R = [[cos(&theta;), -sin(&theta;)], [sin(&theta;), cos(&theta;)]]
+
+* Testing
+
+R * [[1], [0]] = [[cos(&theta;)], [sin(&theta;)]]
+
+**Radians**: &theta; = arcos(x) = arcsin(y) = arctan(y/x)
+**Degrees**: [&theta; = arcos(x) = arcsin(y) = arctan(y/x)] * (180/&pi;)
+
+![Unit Circle](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.shelovesmath.com%2Fwp-content%2Fuploads%2F2012%2F11%2FUnit-Circle.png&f=1&nofb=1)
 
 #### Systems of equations with linear algebra
 
@@ -218,6 +242,257 @@ Ix<sup>&rarr;</sup> = x<sup>&rarr;</sup> = A<sup>-1</sup>b<sup>&rarr;</sup>
     * b<sup>&rarr;</sup> is there product
     * A<sup>-1</sup> is an inverse matrix
     * I is an identity matrix
+
+* Sample code
+
+```python
+A = np.array(matrix)
+b = np.array(vector)
+A_1 = np.linalg.inv(A)
+I = A @ np.linalg.inv(A)
+x = A_1.dot(b)
+
+print(x)
+```
+
+#### Vector similiarity
+
+* Euclidean distance
+    * Distance between p<sup>&rarr;</sup> and q<sup>&rarr;</sup>
+    * Displays relative magnitudes
+
+d(p<sup>&rarr;</sup>,q<sup>&rarr;</sup>) = sqrt((q<sub>1</sub>-p<sub>1</sub>)<sup>2</sup>+(q<sub>2</sub>-p<sub>2</sub>)<sup>2</sup>+...+(q<sub>n</sub>-p<sub>n</sub>)<sup>2</sup>) = sqrt((q<sup>&rarr;</sup>-p<sup>&rarr;</sup>)<sup>2</sup>)
+
+`euc_dist = dot(a,b) / (norm(a) * norm(b))`
+
+```python
+import pandas as pd
+import numpy as np
+
+# Don't alter the code below
+np.random.seed(1)
+vec1 = pd.Series(np.random.randint(0, 10, 35))
+vec2 = pd.Series(np.random.randint(10, 20, 35))
+
+# Your code below
+euc_dist = sum((vec1 - vec2)**2)**.5
+```
+
+* L2- Norm
+
+||p<sup>&rarr;</sup>|| = sqrt(p<sub>1</sub><sup>2</sup>+p<sub>2</sub><sup>2</sup>+...+p<sub>n</sub><sup>2</sup>) = sqrt(p<sup>&rarr;</sup><sup>2</sup>)
+
+* Normalize a data set
+
+```python
+from sklearn.datasets import load_iris
+import numpy as np
+
+iris_data = load_iris()['data']
+
+min_ = iris_data.min(axis=0)
+ptp = iris_data.ptp(axis=0)
+
+iris_data_normalized = np.round((iris_data - min_) / ptp , 2)
+```
+
+* Cosine similarity
+    * Displays direction
+
+p<sup>&rarr;</sup>*q<sup>&rarr;</sup> = ||p<sup>&rarr;</sup>|| * ||q<sup>&rarr;</sup>|| * cos&Theta;
+
+* Where &Theta; is the angle between the vectors
+* 1 = aligned, -1 = opposite, 0 = orthogonal
+
+sim(p<sup>&rarr;</sup>,q<sup>&rarr;</sup>) = cos&Theta; = p<sup>&rarr;</sup> * q<sup>&rarr;</sup> / ||p<sup>&rarr;</sup>|| * ||q<sup>&rarr;</sup>||
+
+##### Eigenvectors and Eigenvalues
+
+* Eigenvectors must be square matrices and satisfy:
+
+Av<sup>&rarr;</sup> = &lambda;v<sup>&rarr;</sup>
+
+* Where &lambda; is a scalar, e.g. the eigenvalue
+
+### Differntial calculus
+
+#### Limits
+
+lim<sub>x&rarr;a</sub> f(x) = L
+
+![Limit](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/7f7dedfbccb1f194dfc0b1d484244008.png)
+
+#### Derivatives
+
+(f(x+h) - f(x)) / h = &Delta;f / &Delta;x
+
+f'(x) = lim<sub>h&rarr;0</sub> (f(x+h) - f(x)) / h = lim<sub>&Delta;x&rarr;0</sub> &Delta;f / &Delta;x = d/dx f(x)
+
+![Derivative](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/25aa43c1b0c93527738ab55c6ac65c6d.png)
+
+#### Power rule
+
+d/dx x<sup>n</sup> = nx<sup>n-1</sup>
+
+#### Chain rule
+
+f(x) = h(x) * g(x) = h(g(x))
+
+f'(x) = h'(g(x)) * g'(x)
+
+**or**
+
+du/dx = (du/dv) * (dv/dx)
+
+### Integral calculus
+
+#### Antiderivative
+
+F(x) = &int;f(x) dx
+
+#### Power rule
+
+&int;x<sup>n</sup> dx = x<sup>n+1</sup> / (n+1) + C
+
+#### Indefinite integrals by substitution
+
+f(g(x)) = &int;f'(g(x))g'(x) dx
+
+#### Reimann summation
+
+area = &Sigma;<sub>i=0</sub><sup>n-1</sup> f(x<sub>i</sub>)&Delta;x
+
+* Sample code
+
+```python
+import numpy as np
+
+
+# Define the function you're integrating
+def f(x):
+    return np.sqrt(x**3) / (x ** 3 + 6)
+
+
+# Define an integration function
+def riemann_sum(f, a, b, n):
+    """Approximate the area under the curve 'f' from 'a' to 'b' via
+    a Riemann summation of 'n' rectangles using the midpoint rule.
+
+    Parameters
+    ----------
+        f : function
+            The function over which to integrate
+        a : float
+            The lower bound of the integral
+        b : float
+            The upper bound of the integral
+        n : int
+            The number of rectangles to use
+
+    Returns
+    -------
+        float
+            An approximation of the definite integral
+            of 'f' over the interval ['a', 'b'].
+    """
+    # The width of the rectangles, delta x
+    dx = (b - a) / n
+
+    # A length-n vector of x-values starting at a + dx/2 and ending at b - dx/2
+    xi = np.linspace(a + 0.5*dx, b - 0.5*dx, n)
+
+    # A length-n vector of just dx ([dx, dx, ...])
+    dx_vec = np.array([dx]*n)
+
+    # Evaluate f(x) for all xi values
+    fxi = f(xi)
+
+    # Return the dot product of f(xi) the vector of [dx, dx, ...]
+    # This is just a quick and easy way to take the sum of the
+    # products f(x_i)*dx
+    return np.dot(fxi, dx_vec)
+
+
+# Call riemann_sum() with the correct arguments
+approx_area = riemann_sum(f, 0, 10, 100)
+print(approx_area)
+```
+
+* Limit
+
+dx = &Delta;x&rarr;0 = lim<sub>n&rarr;&infin; (b-a) / n
+
+* Probability density function
+
+f(x) = (2 * &pi;)<sup>-1/2</sup> * e <sup>(-1/2) * x<sup>2</sup></sup>
+
+* y-axis symmetry
+
+&int;<sub>-a</sub><sup>a</sup> f(x) dx = 2 &int;<sub>0</sub><sup>a</sup> f(x) dx
+
+* Monte Carlo integrator
+
+```python
+import numpy as np
+
+
+# Define the standard normal distribution pdf function
+def std_nrm_pdf(x):
+    return np.exp(-x**2 / 2) / (np.sqrt(2 * np.pi))
+
+
+# Define the Monte Carlo integrator for an even function
+def monte_carlo(f: callable, x_bound: float, y_bound: float, n: int) -> float:
+    """A basic Monte Carlo integrator.
+
+    Note: this integrator assumes that f is an even function,
+    that the bounds of integration are -x_bound to x_bound,
+    and that f(x) >= 0 for all x between 0 and x_bound.
+
+    Parameters
+    ----------
+    f : callable
+        The function object whose definite integral MC approximates.
+    x_bound : float
+        The horizontal bound of the integrating domain.
+    y_bound : float
+        The vertical bound of the integrating domain.
+    n : int
+        The number of random points to generate in the domain.
+
+    Returns
+    -------
+    float
+        The approximate area under f between -x_bound and x_bound.
+    """
+    area_dom = x_bound * y_bound
+
+    # Generate vectors of random x- and y-values, scaled by
+    # their respective bounds
+    x_vals = x_bound * np.random.rand(n)
+    y_vals = y_bound * np.random.rand(n)
+
+    # Use a boolean mask y <= f(x) to get a new vector of only
+    # the values where that condition is true
+    ratio = len(y_vals[y_vals <= f(x_vals)]) / n
+
+    return 2 * area_dom * ratio
+
+
+
+# x_bound is 2 because that's the upper bound of integration
+# y_bound is std_nrm_pdf(0) which for the standard normal
+# distribution is the max value of std_nrm_pdf.
+x_b = 2.0
+y_b = std_nrm_pdf(0)
+
+
+print(monte_carlo(f=std_nrm_pdf, x_bound=x_b, y_bound=y_b, n=10000))
+```
+
+* Integral between two points
+
+&int;<sub>a</sub><sup>b</sup> f(x) - g(x) dx
 
 ---
 
@@ -238,7 +513,11 @@ Ix<sup>&rarr;</sup> = x<sup>&rarr;</sup> = A<sup>-1</sup>b<sup>&rarr;</sup>
 
 ## SQL Databases
 
-#### Table Summary
+* Read sql file
+
+`.read filename.sql`
+
+* Table Summary
 
 `PRAGMA table_info(tablename);`
 
@@ -368,4 +647,86 @@ ORDER BY other_column_name;
     ORDER BY cnt DESC
     LIMIT 1;
     ```
+
+---
+
+## Numpy
+
+* Remove rows w/ np.nan
+
+```python
+# Imports
+from sklearn.datasets import load_diabetes
+from random import choice
+from random import seed
+import numpy as np
+
+# Do not change the code below
+seed(1)
+diabetes = load_diabetes()['data']
+x_miss_idx = [choice(range(diabetes.shape[0])) for _ in range(10)]
+y_miss_idx = [choice(range(diabetes.shape[1])) for _ in range(10)]
+
+for x, y in zip(x_miss_idx, y_miss_idx):
+    diabetes[x,y] = np.nan
+
+# Your code below, the data is in the variable 'diabetes'
+mask = np.any(np.isnan(diabetes) | np.equal(diabetes, 0), axis=1)
+dbts_rmv_nan = diabetes[~mask]
+```
+
+---
+
+## Vernacular
+
+### Inputs
+
+* Explanatory Variable
+* Independent Variable
+* Controlled Variable
+* Manipulated Variable
+* Exposure Variable
+* Predicated Variable
+* Treatment Variable
+* Input Variable
+* Regressor (common in Statistics)
+* Predictor (common in Data Science)
+* Covariate
+* Exogenous (from econometrics)
+
+### Output
+
+* Response Variable
+* Dependent Variable
+* Regressand (common in Statistics)
+* Criterion
+* Predicted Variable
+* Measured Variable
+* Explained Variable
+* Experimental Variable
+* Responding Variable
+* Outcome Variable
+* Output Variable
+* Target (very common in Data Science)
+* Label (very common in Data Science)
+
+---
+
+## Python
+
+#### Type hint
+
+```python
+def factorial(n: int) -> int:
+    prod = 1
+    for num in range(1, n + 1):
+        prod *= num
+    return prod
+
+>>> help(factorial)
+Help on function factorial in module __main__:
+
+factorial(n: int) -> int
+```
+
 </span>
