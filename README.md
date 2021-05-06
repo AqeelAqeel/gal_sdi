@@ -125,7 +125,7 @@ print((n*p) * (1-p))
 
 * VAR = n * p * (1 - p)
 
-#### Correlation coefficient
+#### Correlation coefficient (r)
 
 * corr(X, Y) = [&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar)(y<sub>i</sub> - yBar)] / SQRT[(&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2) * (&Sigma;<sub>i=1</sub><sup>n</sup> (y<sub>i</sub> - yBar) ** 2)
 
