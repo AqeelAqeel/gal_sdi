@@ -43,7 +43,7 @@ Last Update: 24 Apr 2021
 
 * create a new repository on the command line
 
-```unix
+```zsh
 echo "# gal_sdi" >> README.md
 git init
 git add .
@@ -55,7 +55,7 @@ git push -u origin main
 
 * push an existing repository from the command line
 
-```unix
+```zsh
 git remote add origin https://github.com/josiah-d/gal_sdi.git
 git branch -M main
 git push -u origin main
@@ -81,15 +81,15 @@ git push -u origin main
         * K is `number of successes available`
         * k is `number of successes needed`
         * N is `members available`
-        * n is `mebers chosen`
+        * n is `members chosen`
 
 #### Conditional probability
 
-* P(A | B) = P(AB) / P(B)
+* P(A|B) = P(AB) / P(B)
 
 #### Bayes' Theorum
 
-* P(A | B) = (P(B | A) * P(A)) / P(B)
+* P(Ak|B) = (P(B | A) * P(A)) / P(B)
 
 #### Cumulative distribution function
 
@@ -141,11 +141,38 @@ print((n*p) * (1-p))
     * Q: what's the probability you wait more than a minute before flipping a heads, given that you flip an average of 10 heads per minute?
         * A: exponential
 
+* Bernoulli Trials
+    * Must be a binary trial
+    * Probability Mass Function (PMF)
+        * P(X=x) = p<sup>x</sup>(1-p)<sup>1-x</sup> or
+        * P(X=x) = nCx * p<sup>x</sup>(1-p)<sup>n-x</sup>
+
+```python
+def pmf(p, x, n):
+    ...:     choose = math.factorial(n) / (math.factorial(n-x) * math.factorial(x))
+    ...:     return choose * p ** x * (1 - p) ** (n - x)
+```
+
+    * &mu; = p or np
+    * &sigma;<su>2</sup> = p(1-p) or np(1-p())
+
+* Binomial Distribution
+    * Distribution of the number of successes in N Bernoulli Trials
+    * Number of trials must be fixed
+    * Trials must be indepenedent
+    * Each trial must be Bernoulli Trials
+
+* Geometric Distribution
+    * Distribution of the number of trials before first success
+
+![Geometric](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/365d2527ed510a5c5bf3d220887aef13.png)
+
+* Negative Binomial Distribution
+    * Distribution of the number of trials before the ith success
+
 ![Normal](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/c548abe948b204550481654e32b9d4d4.png)
 
 ![Empirical Rule](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/7e9688d48ba2b2e304969d13d8e4343d.png)
-
-![Geometric](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/365d2527ed510a5c5bf3d220887aef13.png)
 
 ![Power Law](https://s3.us-west-2.amazonaws.com/forge-production.galvanize.com/content/b2e012bf689efa1483f296698db3c0f0.png)
 
@@ -709,6 +736,12 @@ dbts_rmv_nan = diabetes[~mask]
 * Output Variable
 * Target (very common in Data Science)
 * Label (very common in Data Science)
+
+---
+
+## Algorithms
+
+![Machine Learning Algorithms](https://cdn.discordapp.com/attachments/822941807385509888/822941867792269352/image4.png)
 
 ---
 
