@@ -111,11 +111,11 @@ git push -u origin main
 #### Covariance
 
 * Estimates amount and direction Y moves as X changes
-* COV(X, Y) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar)(y<sub>i</sub> - yBar)
+* COV(X, Y) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - <span STYLE="text-decoration:overline">x</span>)(y<sub>i</sub> - yBar)
 
 #### Variance
 
-* VAR(X) = COV(X, X) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2
+* VAR(X) = COV(X, X) = 1/n * &Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - <span STYLE="text-decoration:overline">x</span>) ** 2
 
 ```python
 n = total
@@ -127,7 +127,7 @@ print((n*p) * (1-p))
 
 #### Correlation coefficient (r)
 
-* corr(X, Y) = [&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar)(y<sub>i</sub> - yBar)] / SQRT[(&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - xBar) ** 2) * (&Sigma;<sub>i=1</sub><sup>n</sup> (y<sub>i</sub> - yBar) ** 2)
+* corr(X, Y) = [&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - <span STYLE="text-decoration:overline">x</span>)(y<sub>i</sub> - yBar)] / SQRT[(&Sigma;<sub>i=1</sub><sup>n</sup> (x<sub>i</sub> - <span STYLE="text-decoration:overline">x</span>) ** 2) * (&Sigma;<sub>i=1</sub><sup>n</sup> (y<sub>i</sub> - yBar) ** 2)
 
 #### Distributions
 
@@ -146,15 +146,14 @@ print((n*p) * (1-p))
     * Probability Mass Function (PMF)
         * P(X=x) = p<sup>x</sup>(1-p)<sup>1-x</sup> or
         * P(X=x) = nCx * p<sup>x</sup>(1-p)<sup>n-x</sup>
+    * &mu; = p or np
+    * &sigma;<su>2</sup> = p(1-p) or np(1-p())
 
 ```python
 def pmf(p, x, n):
-    ...:     choose = math.factorial(n) / (math.factorial(n-x) * math.factorial(x))
-    ...:     return choose * p ** x * (1 - p) ** (n - x)
+    choose = math.factorial(n) / (math.factorial(n-x) * math.factorial(x))
+    return choose * p ** x * (1 - p) ** (n - x)
 ```
-
-    * &mu; = p or np
-    * &sigma;<su>2</sup> = p(1-p) or np(1-p())
 
 * Binomial Distribution
     * Distribution of the number of successes in N Bernoulli Trials
@@ -180,8 +179,8 @@ def pmf(p, x, n):
 
 #### Central limit theorem (CLT)
 
-* &mu;_Xbar = &mu;
-* &sigma;_Xbar = &sigma; / sqrt(n)
+* &mu;<sub><span STYLE="text-decoration:overline">X</span></sub> = &mu;
+* &sigma;<sub><span STYLE="text-decoration:overline">X</span></sub> = &sigma; / sqrt(n)
 
 #### Hypothesis testing
 
@@ -205,7 +204,7 @@ def pmf(p, x, n):
         * Type II
             * Accept H<sub>0</sub> when it is `False`
 * t-statistic
-    * t = (xBar - &mu;<sub>0</sub>) / (s / sqrt(n)) * t(n - 1)
+    * t = (<span STYLE="text-decoration:overline">x</span> - &mu;<sub>0</sub>) / (s / sqrt(n)) * t(n - 1)
 
 #### Confidence intervals
 
@@ -365,11 +364,7 @@ d/dx x<sup>n</sup> = nx<sup>n-1</sup>
 
 f(x) = h(x) * g(x) = h(g(x))
 
-f'(x) = h'(g(x)) * g'(x)
-
-**or**
-
-du/dx = (du/dv) * (dv/dx)
+f'(x) = h'(g(x)) * g'(x) = du/dx = (du/dv) * (dv/dx)
 
 ### Integral calculus
 
