@@ -7,6 +7,10 @@ Last Update: 24 Apr 2021
 
 ---
 
+## Data Science Immersive Pacific
+
+[Student Resource Document](https://docs.google.com/document/d/1-O00uVHoBe7b7SFS6GpN50emo2Wuz9jG9fPsHNUKtbA/edit)
+
 ## CLI
 
 #### Basic Commands
@@ -19,6 +23,7 @@ Last Update: 24 Apr 2021
 * remove: `rm [file name]`
 * recursive remove: `rm -r [file name]`
 * clear terminal: `cmd + k`
+* find files in directory: `find . -name file_name`
 
 ---
 
@@ -30,6 +35,7 @@ Last Update: 24 Apr 2021
 
 * initize repo: `git init`
 * clone repo: `git clone [url]`
+* status: `git status`
 * add to stage: `git add [filename]`
 * commit: `git commit -m "[message]"`
 * push: `git push`
@@ -38,6 +44,7 @@ Last Update: 24 Apr 2021
 * create branch: `git branch [new branch name]`
 * switch branches: `git checkout [branch name]`
 * create and switch brnaches: `git checkout -b [new branch name]`
+* roll to previous commit: `git reset`
 
 #### Advanced Commands
 
@@ -756,5 +763,57 @@ Help on function factorial in module __main__:
 
 factorial(n: int) -> int
 ```
+
+---
+
+## References
+
+### Machine Learning
+
+* [Machine Learning in Action](http://www.manning.com/pharrington/)
+* [Programming Collective Intelligence](http://www.amazon.com/Programming-Collective-Intelligence-Building-Applications/dp/0596529325)
+* [Machine Learning for Hackers](http://shop.oreilly.com/product/0636920018483.do)
+* [An Introduction to Machine Learning](http://alex.smola.org/drafts/thebook.pdf)
+
+### Statistics
+
+* [Probabilistic Programming and Bayesian Methods for Hackers](http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/)
+* [Think Stats](https://greenteapress.com/wp/think-stats-2e/)
+* [Think Bayes](http://www.greenteapress.com/thinkbayes/)
+* [All of Statistics](http://www.stat.cmu.edu/~larry/all-of-statistics/)
+* [Mostly Harmless Econometrics](http://www.amazon.com/Mostly-Harmless-Econometrics-Empiricists-Companion/dp/0691120358)
+
+### Computer Science/Programming
+
+* [Think Python](https://greenteapress.com/wp/think-python-2e/)
+* [Think Complexity: Analysis of Algorithms](http://greenteapress.com/complexity2/html/thinkcomplexity2003.html#sec20)
+
+### Numpy/Scipy
+
+* [scipy Lectures](https://scipy-lectures.github.io/intro/numpy/index.html)
+* [Crash Course in Python for Scientist](http://nbviewer.ipython.org/gist/rpmuller/5920182)
+* [Scientific Python Lectures](http://nbviewer.ipython.org/github/jrjohansson/scientific-python-lectures/blob/master/Lecture-2-Numpy.ipynb)
+* [Python Bootcamp Lectures](https://nbviewer.jupyter.org/github/profjsb/python-bootcamp/blob/master/Lectures/05_NumpyPandasMatplotlib/IntroNumPy.ipynb)
+* [scipy Lectures](https://scipy-lectures.github.io)
+
+### SQL
+
+* [http://sqlfiddle.com/](http://sqlfiddle.com/)
+* [http://use-the-index-luke.com/](http://use-the-index-luke.com/)
+* [SQL School](http://sqlschool.modeanalytics.com/)
+
+### scikit-learn
+
+* [Introduction to Machine Learning with sklearn](http://researchcomputing.github.io/meetup_spring_2014/python/sklearn.html)
+* [scikit-learn workshop](https://github.com/jakevdp/sklearn_pycon2014)
+* [Machine Learning Tutorial](https://github.com/amueller/tutorial_ml_gkbionics)
+* [Introduction to scikit-learn](http://nbviewer.ipython.org/github/tdhopper/Research-Triangle-Analysts--Intro-to-scikit-learn/blob/master/Intro%20to%20Scikit-Learn.ipynb)
+* [Data analysis with scikit-learn](http://sebastianraschka.com/Articles/2014_scikit_dataprocessing.html)
+* [Advanced Machine Learning with scikit-learn](https://us.pycon.org/2013/community/tutorials/23/)
+
+### Extra
+
+* [University of Colorado Computational Science workshops](http://researchcomputing.github.io/meetup_spring_2014/)
+* [Networkx tutorial](http://snap.stanford.edu/class/cs224w-2012/nx_tutorial.pdf)
 
 </span>
